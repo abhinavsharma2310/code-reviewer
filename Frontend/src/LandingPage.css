@@ -1,0 +1,102 @@
+/* Full-screen layout */
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #070f1f, #7a8fb4); /* Cool gradient background */
+  background-size: cover;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+/* Overlay for text readability */
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Darken the background */
+  z-index: -1;
+}
+
+/* Container for the image and content */
+.landing-container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+/* Left Side: Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.ai-image {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Side: Content Section */
+.content-section {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* Button Styling */
+.next-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.next-button:hover {
+  background-color: #1c181a;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(32, 31, 30, 0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .landing-container {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .image-section {
+      margin-bottom: 20px;
+  }
+
+  .content-section {
+      text-align: center;
+  }
+}

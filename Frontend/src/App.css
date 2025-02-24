@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  background: linear-gradient(45deg, #070f1f, #7a8fb4);
+  gap: 1rem;
+}
+
+main .left, main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+}
+
+main .left {
+  background-color: #000000;
+  position: relative;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+/* Glowing effect */
+main .left.glow {
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.8), 
+              0 0 30px 10px rgba(0, 255, 255, 0.6);
+  animation: flicker 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes flicker {
+  0% { box-shadow: 0 0 10px 3px rgba(0, 255, 255, 0.7); }
+  100% { box-shadow: 0 0 25px 10px rgba(0, 255, 255, 0.9); }
+}
+
+/* Code Container */
+.left .code, .code pre, .code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color:black;
+  color: white;
+  padding: 1rem;
+}
+
+/* Review Button */
+.review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.review:hover {
+  background-color: rgb(180, 180, 255);
+  transform: scale(1.05);
+}
+
+.review:active {
+  transform: scale(0.95);
+  background-color: rgb(150, 150, 255);
+}
+
+.review:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Right Panel */
+main .right {
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  overflow: auto;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+/* Shaking effect for AI Review */
+main .right.shake {
+  background-color: #454545;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+/* Style the code block */
+.language-javascript {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-color: #282c34; 
+  /* Dark background for the code */
+  color: #f8f8f2; /* Light text color */
+  padding:0px;
+  border-radius: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap; /* Ensure the code wraps properly */
+  word-wrap: break-word;
+  margin-top:0px;
+  position: relative;
+}
+
+/* Style for the comment */
+.code-comment {
+  color: #6a9955; /* Green color for the comment */
+  font-style: italic;
+}
+
+/* Optional: Style the code for syntax highlighting (you can extend it) */
+.language-javascript .code-comment {
+  font-style: italic;
+}
